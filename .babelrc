@@ -1,0 +1,45 @@
+{
+  "presets": [
+    "next/babel"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "extensions": [
+          ".js",
+          ".json"
+        ],
+        "alias": {
+          "containers/*": [
+            "./containers/*"
+          ],
+          "pages/*": [
+            "./pages/*"
+          ],
+          "utils/*": [
+            "./containers/utils/*"
+          ]
+        }
+      }
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "rootPathPrefix": "#"
+      }
+    ]
+  ]
+}
